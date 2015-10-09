@@ -1,0 +1,10 @@
+<!-- Indices written at Thu, 8 Oct 2015 12:36:27 AEDT -->
+
+<datastore-indexes>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="message" ancestor="true" source="auto">
+        <property name="nickname" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

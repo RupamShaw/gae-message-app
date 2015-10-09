@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                 xmlns="http://java.sun.com/xml/ns/javaee" 
+                 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+                 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+<!-- Filters --> 
+
+<filter> 
+  <filter-name>PageFilter</filter-name> 
+  <filter-class>cse405.message.PageFilter</filter-class> 
+</filter>
+
+<filter> 
+  <filter-name>AjaxFilter</filter-name> 
+  <filter-class>cse405.message.AjaxFilter</filter-class> 
+</filter>
+
+<!-- Servlets --> 
+
+<servlet> 
+  <servlet-name>Home</servlet-name> 
+  <servlet-class>cse405.message.HomeServlet</servlet-class> 
+</servlet> 
+
+<servlet> 
+  <servlet-name>Logout</servlet-name> 
+  <servlet-class>cse405.message.LogoutServlet</servlet-class> 
+</servlet>
+
+<servlet> 
+  <servlet-name>CreateMessage</servlet-name> 
+  <servlet-class>cse405.message.CreateMessageServlet</servlet-class> 
+</servlet>
+
+<servlet> 
+  <servlet-name>DeleteMessage</servlet-name> 
+  <servlet-class>cse405.message.DeleteMessageServlet</servlet-class> 
+</servlet>
+
+<servlet> 
+  <servlet-name>GetMessageList</servlet-name> 
+  <servlet-class>cse405.message.GetMessageListServlet</servlet-class> 
+</servlet>
+
+<!-- JSPs --> 
+
+<servlet> 
+  <servlet-name>home-jsp</servlet-name> 
+  <jsp-file>WEB-INF/jsp/home.jsp</jsp-file> 
+  <load-on-startup>1</load-on-startup> 
+</servlet> 
+
+<!-- Filter Paths --> 
+
+<filter-mapping> 
+  <filter-name>PageFilter</filter-name> 
+  <url-pattern>/home</url-pattern> 
+</filter-mapping>
+
+<filter-mapping> 
+  <filter-name>AjaxFilter</filter-name> 
+  <url-pattern>/get-message-list</url-pattern> 
+  <url-pattern>/create-message</url-pattern> 
+  <url-pattern>/delete-message</url-pattern> 
+</filter-mapping>
+
+<!-- Servlet Paths -->
+
+<servlet-mapping> 
+  <servlet-name>Home</servlet-name> 
+  <url-pattern>/home</url-pattern> 
+</servlet-mapping>
+
+<servlet-mapping> 
+  <servlet-name>Logout</servlet-name> 
+  <url-pattern>/logout</url-pattern> 
+</servlet-mapping> 
+
+<servlet-mapping> 
+  <servlet-name>CreateMessage</servlet-name> 
+  <url-pattern>/create-message</url-pattern> 
+</servlet-mapping> 
+
+<servlet-mapping>
+  <servlet-name>DeleteMessage</servlet-name>
+  <url-pattern>/delete-message</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping> 
+  <servlet-name>GetMessageList</servlet-name> 
+  <url-pattern>/get-message-list</url-pattern> 
+</servlet-mapping> 
+
+<!-- Welcome File --> 
+
+<welcome-file-list> 
+  <welcome-file>index.html</welcome-file> 
+</welcome-file-list> 
+
+</web-app>
